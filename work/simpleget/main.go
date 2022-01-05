@@ -12,7 +12,7 @@ func main() {
         panic(err)
     }
     defer resp.Body.Close()
-    bodu, err := ioutil.ReadAll(resp.Body)
+    body, err := ioutil.ReadAll(resp.Body)
     if err != nil {
         panic(err)
     }
