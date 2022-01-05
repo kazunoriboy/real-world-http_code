@@ -1,0 +1,9 @@
+version: '3' 
+services:
+  app:
+    build: . 
+    tty: true 
+    volumes:
+      - ./work:/go/src/work
+    ports:
+      - 18888:18888
