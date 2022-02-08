@@ -17,4 +17,5 @@ func main() {
         panic(err)
     }
     log.Println(string(body))
+    log.Println("Headers", resp.Header)
 }
