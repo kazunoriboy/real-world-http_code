@@ -3,15 +3,12 @@ package main
 import (
     "log"
     "net/http"
-    "os"
+    "strings"
 )
 
 func main() {
-    file, err := os.Open("main.go")
-    if err != nil {
-        panic(err)
-    }
-    resp, err := http.Post("http://localhost:18888", "text/plain", file)
+    reader := strings.NewReader("テキスト")
+    resp, err := http.Post("http://localhost:18888", "text/plain", reader)
     if err != nil {
         panic(err)
     }
