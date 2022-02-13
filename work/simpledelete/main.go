@@ -13,6 +13,7 @@ func main() {
 		panic(err)
 	}
 	request.Header.Add("Content-Type", "image/jpeg")
+	request.SetBasicAuth("user", "pass")
 	resp, err := client.Do(request)
 	if err != nil {
 		panic(err)
