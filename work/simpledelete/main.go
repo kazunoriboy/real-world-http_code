@@ -14,6 +14,7 @@ func main() {
 	}
 	request.Header.Add("Content-Type", "image/jpeg")
 	request.SetBasicAuth("user", "pass")
+	request.AddCookie(&http.Cookie{Name: "test", Value: "value"})
 	resp, err := client.Do(request)
 	if err != nil {
 		panic(err)
