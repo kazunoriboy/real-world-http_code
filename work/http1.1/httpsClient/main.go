@@ -10,14 +10,14 @@ import (
 )
 
 func main() {
-	cert, err := ioutil.ReadFile("../../ca.crt")
+	cert, err := ioutil.ReadFile("ca.crt")
 	if err != nil {
 		panic(err)
 	}
 	certPool := x509.NewCertPool()
 	certPool.AppendCertsFromPEM(cert)
 	tlsConfig := &tls.Config{
-		RootCAs: certPool,
+		InsecureSkipVerify: true,
 	}
 	tlsConfig.BuildNameToCertificate()
 
