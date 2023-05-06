@@ -7,3 +7,4 @@ services:
       - ./work:/go/src/work
     ports:
       - 18888:18888
+      - 18443:18443
